@@ -121,7 +121,7 @@ function Home() {
 
       {/* ABOUT */}
       <section id="about" className="py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:items-center">
+        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:items-center text-center">
           <img
             src={terraceImg}
             alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
