@@ -30,13 +30,13 @@ function BlogPage() {
     <div className="min-h-screen bg-background">
       <Nav />
 
-      <header className="pt-32 pb-16 bg-forest-deep text-cream text-center">
-        <div className="mx-auto max-w-4xl px-6">
+      <header className="bg-forest-deep text-cream text-center pb-0 pt-[80px]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           <span className="eyebrow">360° Journal</span>
-          <h1 className="font-display text-5xl md:text-7xl mt-3 mb-4">
+          <h1 className="font-display md:text-7xl mt-3 mb-4 text-4xl">
             Stories from <em className="text-gold">the Vibe.</em>
           </h1>
-          <p className="text-cream/70 max-w-xl mx-auto">Guides, recipes, and unfiltered notes from Sarandë.</p>
+          <p className="text-cream/70 max-w-xl mx-auto text-sm">Guides, recipes, and unfiltered notes from Sarandë.</p>
         </div>
       </header>
 
