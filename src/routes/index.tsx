@@ -310,9 +310,9 @@ function Home() {
 
       {/* GALLERY */}
       <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-10 text-left">
-          <span className="eyebrow text-left">The Atmosphere</span>
-          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-left">Let the space speak.</h2>
+        <div className="mx-auto max-w-7xl px-6 mb-10 text-center">
+          <span className="eyebrow">The Atmosphere</span>
+          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl">Let the space speak.</h2>
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
