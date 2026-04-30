@@ -132,13 +132,13 @@ function MenuPage() {
     <div className="min-h-screen bg-background">
       <Nav />
 
-      <header className="pt-32 pb-16 bg-forest-deep text-cream text-center">
-        <div className="mx-auto max-w-4xl px-6">
+      <header className="bg-forest-deep text-cream text-center pb-0 pt-[80px]">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           <span className="eyebrow">The Full Menu</span>
-          <h1 className="font-display text-5xl md:text-7xl mt-3 mb-4">
+          <h1 className="font-display md:text-7xl mt-3 mb-4 text-4xl">
             Drink. Eat. <em className="text-gold">Repeat.</em>
           </h1>
-          <p className="text-cream/70 max-w-xl mx-auto">All prices in Albanian Lek (L). Service included.</p>
+          <p className="text-cream/70 max-w-xl mx-auto text-sm">All prices in Albanian Lek. Service included.</p>
         </div>
       </header>
 
@@ -153,12 +153,12 @@ function MenuPage() {
         </div>
       </nav>
 
-      <main className="mx-auto max-w-5xl px-6 py-20 space-y-20">
+      <main className="mx-auto max-w-5xl px-6 py-20 space-y-20 text-left">
         {sections.map((s) => (
           <section key={s.id} id={s.id} className="scroll-mt-32">
-            <div className="border-b border-forest/15 pb-4 mb-8">
-              <h2 className="font-display text-4xl md:text-5xl text-forest">{s.title}</h2>
-              {s.note && <p className="text-sm text-gold uppercase tracking-[0.2em] mt-2">{s.note}</p>}
+            <div className="border-b border-forest/15 pb-4 mb-8 text-center">
+              <h2 className="font-display text-4xl md:text-5xl text-forest text-center">{s.title}</h2>
+              {s.note && <p className="text-sm text-gold uppercase tracking-[0.2em] mt-2 text-center">{s.note}</p>}
             </div>
             <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-6">
               {s.items.map((it) => (
