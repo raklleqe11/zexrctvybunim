@@ -141,8 +141,8 @@ function Home() {
           </div>
 
           {/* Text column */}
-          <div className="lg:col-span-6 lg:pl-6">
-            <span className="eyebrow">More Than a Bar</span>
+          <div className="lg:col-span-6 lg:pl-6 text-left">
+            <span className="eyebrow text-right">More Than a Bar</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-7 text-forest leading-[1.05]">
               Born from passion.<br />
               <em className="text-gold not-italic font-display italic">Built for the vibe.</em>
@@ -172,7 +172,7 @@ function Home() {
               ))}
             </ul>
 
-            <a href="#contact" className="btn-ghost-dark inline-flex gap-2">
+            <a href="#contact" className="btn-ghost-dark inline-flex gap-2 text-center">
               Our Full Story <ArrowRight size={16} />
             </a>
           </div>
@@ -180,11 +180,11 @@ function Home() {
       </section>
 
       {/* MENU PREVIEW */}
-      <section className="py-24 bg-muted/40">
+      <section className="py-24 bg-muted/40 text-center">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-12">
             <span className="eyebrow">Drink. Eat. Feel the Vibe.</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 text-forest">A taste of the menu</h2>
+            <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-center">A taste of the menu</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2 mb-12 max-w-md sm:max-w-none mx-auto">
@@ -212,9 +212,9 @@ function Home() {
                 <article key={c.name} className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:-translate-y-1 transition-transform">
                   <PhotoPlaceholder label={`Cocktail photo: ${c.name} in coupe glass, garnish, soft backlight`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
                   <div className="p-6">
-                    {c.badge && <span className="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold">{c.badge}</span>}
+                    {c.badge && <span className="text-gold text-xl font-semibold">{c.badge}</span>}
                     <div className="flex items-baseline justify-between mt-1">
-                      <h3 className="font-display text-2xl text-forest">{c.name}</h3>
+                      <h3 className="font-display text-forest mt-2 mb-3 group-hover:text-gold transition-colors text-xl">{c.name}</h3>
                       <span className="text-forest font-sans font-semibold">{c.price}</span>
                     </div>
                     <p className="text-sm text-charcoal/65 mt-2">{c.desc}</p>
@@ -230,7 +230,7 @@ function Home() {
                 <article key={c.name} className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)]">
                   <PhotoPlaceholder label={`Breakfast photo: ${c.name}, plated, natural morning light`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
                   <div className="p-6">
-                    <h3 className="font-display text-2xl text-forest">{c.name}</h3>
+                    <h3 className="font-display text-forest mt-2 mb-3 group-hover:text-gold transition-colors text-xl">{c.name}</h3>
                     <p className="text-sm text-charcoal/65 mt-2">{c.desc}</p>
                   </div>
                 </article>
@@ -244,7 +244,7 @@ function Home() {
                 <article key={c.name} className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)]">
                   <PhotoPlaceholder label={`Food photo: ${c.name}, top-down, rustic plate`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
                   <div className="p-6">
-                    <h3 className="font-display text-2xl text-forest">{c.name}</h3>
+                    <h3 className="font-display text-forest mt-2 mb-3 group-hover:text-gold transition-colors text-xl">{c.name}</h3>
                     <p className="text-sm text-charcoal/65 mt-2">{c.desc}</p>
                   </div>
                 </article>
@@ -267,7 +267,7 @@ function Home() {
           )}
 
           <div className="text-center mt-12">
-            <a href="/menu" className="btn-ghost-dark inline-flex gap-2">View Full Menu <ArrowRight size={16} /></a>
+            <a href="/menu" className="btn-ghost-dark inline-flex gap-2 text-center">View Full Menu <ArrowRight size={16} /></a>
           </div>
         </div>
       </section>
@@ -299,9 +299,9 @@ function Home() {
 
       {/* GALLERY */}
       <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-10">
+        <div className="mx-auto max-w-7xl px-6 mb-10 text-center">
           <span className="eyebrow">The Atmosphere</span>
-          <h2 className="font-display text-4xl md:text-5xl mt-3 text-forest">Let the space speak.</h2>
+          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-center">Let the space speak.</h2>
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
@@ -332,11 +332,11 @@ function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" className="bg-forest-deep text-cream py-24">
+      <section id="testimonials" className="bg-forest-deep text-cream py-24 text-center">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center mb-14 flex flex-col items-center">
-            <span className="eyebrow">Guest Stories</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5">What our guests say</h2>
+            <span className="eyebrow">{"\n"}</span>
+            <h2 className="font-display md:text-5xl mt-3 mb-5 text-center text-3xl">What our guests say</h2>
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5">
               <div className="flex gap-0.5 text-gold">
                 {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
@@ -387,12 +387,12 @@ function Home() {
       {/* BLOG PREVIEW */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-end justify-between mb-12 gap-6 flex-wrap">
-            <div>
+          <div className="flex items-end justify-between mb-12 gap-6 flex-wrap text-center">
+            <div className="text-center">
               <span className="eyebrow">360° Journal</span>
-              <h2 className="font-display text-4xl md:text-5xl mt-3 text-forest">Stories from the Vibe</h2>
+              <h2 className="font-display md:text-5xl mt-3 mb-5 text-center text-3xl">Stories from the Vibe</h2>
             </div>
-            <a href="/blog" className="btn-ghost-dark inline-flex gap-2">Visit the Journal <ArrowRight size={16} /></a>
+            <a href="/blog" className="btn-ghost-dark inline-flex gap-2 text-center">Visit the Journal <ArrowRight size={16} /></a>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {posts.map((p) => (
@@ -400,7 +400,7 @@ function Home() {
                 <PhotoPlaceholder label={`Blog cover: ${p.title}`} className="aspect-[16/10] !rounded-none !border-x-0 !border-t-0" />
                 <div className="p-6">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold">{p.tag}</span>
-                  <h3 className="font-display text-2xl text-forest mt-2 mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
+                  <h3 className="font-display text-forest mt-2 mb-3 group-hover:text-gold transition-colors text-xl">{p.title}</h3>
                   <p className="text-sm text-charcoal/65 mb-4">{p.excerpt}</p>
                   <a href="/blog" className="text-sm text-forest font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all">Read More <ArrowRight size={14} /></a>
                 </div>
