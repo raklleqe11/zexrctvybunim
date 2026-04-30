@@ -246,8 +246,8 @@ function Home() {
       <section className="bg-forest text-cream py-20">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <span className="eyebrow">Every Day</span>
-          <h2 className="font-display text-4xl md:text-6xl mt-3 mb-6">
-            Happy Hour <span className="text-gold italic">2PM — 6PM</span>
+          <h2 className="font-display whitespace-nowrap text-[2rem] sm:text-5xl md:text-6xl mt-3 mb-6">
+            Happy Hour <span className="text-gold italic">2–6PM</span>
           </h2>
           <div className="grid sm:grid-cols-3 gap-6 my-10 text-sm">
             <div className="border border-cream/15 rounded-xl p-5">
