@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Youtube, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/site/logo.png";
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-forest border-2 border-gold">
-              <span className="font-display text-gold text-xl">V</span>
-            </div>
+            <img src={logo} alt="Vibe 360°" className="h-12 w-12 object-contain" />
             <div>
               <div className="font-display text-cream text-xl">Vibe 360°</div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-gold/80">Cocktails · Bites · Sea</div>

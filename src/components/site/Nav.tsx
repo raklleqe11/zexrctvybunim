@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/site/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -35,9 +36,7 @@ export function Nav() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-forest border-2 border-gold transition-transform group-hover:rotate-12">
-            <span className="font-display text-gold text-lg leading-none">V</span>
-          </div>
+          <img src={logo} alt="Vibe 360° Sarandë" className="h-11 w-11 object-contain transition-transform group-hover:rotate-6" />
           <div className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-cream text-lg">Vibe 360°</span>
             <span className="text-[10px] uppercase tracking-[0.25em] text-gold/80">Sarandë</span>
