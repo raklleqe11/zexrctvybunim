@@ -98,15 +98,15 @@ function Home() {
 
       {/* VIBE STRIP */}
       <section className="bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex gap-8 overflow-x-auto md:justify-around md:overflow-visible text-sm">
+        <div className="mx-auto max-w-7xl px-4 py-4 grid grid-cols-2 gap-x-4 gap-y-3 md:flex md:justify-around md:py-5 text-xs sm:text-sm">
           {[
-            { i: <Sun size={16} className="text-gold" />, t: "Open Daily 8AM" },
-            { i: <Wine size={16} className="text-gold" />, t: "Happy Hour 2–6PM" },
-            { i: <Waves size={16} className="text-gold" />, t: "Ionian Seaview" },
-            { i: <Cloud size={16} className="text-gold" />, t: "Premium Shisha" },
+            { i: <Sun size={15} className="text-gold shrink-0" />, t: "Open Daily 8AM" },
+            { i: <Wine size={15} className="text-gold shrink-0" />, t: "Happy Hour 2–6PM" },
+            { i: <Waves size={15} className="text-gold shrink-0" />, t: "Ionian Seaview" },
+            { i: <Cloud size={15} className="text-gold shrink-0" />, t: "Premium Shisha" },
           ].map((x, i) => (
-            <div key={i} className="flex items-center gap-2 whitespace-nowrap shrink-0">
-              {x.i}<span>{x.t}</span>
+            <div key={i} className="flex items-center justify-center gap-2">
+              {x.i}<span className="truncate">{x.t}</span>
             </div>
           ))}
         </div>
