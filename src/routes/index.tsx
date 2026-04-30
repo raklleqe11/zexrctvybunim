@@ -216,7 +216,9 @@ function Home() {
               {cocktails.map((c) => (
                 <article key={c.name} className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:-translate-y-1 transition-transform">
                   {c.img ? (
-                    <img src={c.img} alt={`${c.name} cocktail at Vibe 360°`} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                    <div className="aspect-[4/5] w-full bg-cream/40 flex items-center justify-center overflow-hidden">
+                      <img src={c.img} alt={`${c.name} cocktail at Vibe 360°`} className="h-full w-full object-contain" loading="lazy" />
+                    </div>
                   ) : (
                     <PhotoPlaceholder label={`Cocktail photo: ${c.name} in coupe glass, garnish, soft backlight`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
                   )}
