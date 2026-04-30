@@ -136,8 +136,8 @@ function Home() {
           <div className="lg:col-span-6 relative">
             <div className="relative">
               <img
-                src={terraceImg}
-                alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
+                src={goldenHourImg}
+                alt="Vibe 360° Sarandë rooftop bar at golden hour with 360° sea views"
                 className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-elegant)]"
               />
               {/* Floating stat card */}
