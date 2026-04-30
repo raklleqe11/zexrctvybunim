@@ -93,8 +93,8 @@ function Home() {
       </section>
 
       {/* VIBE STRIP */}
-      <section className="bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-4 text-left">
+      <section className="bg-forest text-cream py-5">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 gap-y-3 gap-x-4 md:grid-cols-4 md:gap-12 text-center">
           {[
             { i: <Sun size={15} className="text-gold shrink-0" />, t: "Open Daily 8AM" },
             { i: <Wine size={15} className="text-gold shrink-0" />, t: "Happy Hour 2–6PM" },
