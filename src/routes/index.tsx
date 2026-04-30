@@ -120,38 +120,77 @@ function Home() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 md:py-32">
-        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:items-center text-center">
-          <img
-            src={terraceImg}
-            alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
-            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-card)]"
-          />
-          <div>
-            <span className="eyebrow">More Than a Bar</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-6 text-forest">
-              Born from passion,<br /><em className="text-gold not-italic font-display">built for vibes.</em>
-            </h2>
-            <p className="text-charcoal/75 leading-relaxed mb-4">
-              Vibe 360° was born on the Sarandë seafront with one goal — to create a place where the sunset, the music, and the cocktails all hit at exactly the right moment.
-            </p>
-            <p className="text-charcoal/75 leading-relaxed mb-8">
-              Two seaview verandas, a bar built around Albanian spirits, and a kitchen that loves the Mediterranean. Come for golden hour, stay until the stars are out.
-            </p>
-            <div className="grid grid-cols-3 gap-3 mb-8">
-              {[
-                { icon: "🌅", t: "Seaview", s: "Two verandas" },
-                { icon: "🥂", t: "Cocktails", s: "Albanian craft" },
-                { icon: "🍕", t: "Kitchen", s: "Mediterranean" },
-              ].map((c) => (
-                <div key={c.t} className="rounded-xl border border-forest/15 bg-forest/[0.04] px-3 py-4 text-center">
-                  <div className="text-2xl mb-1.5">{c.icon}</div>
-                  <div className="text-sm font-semibold text-forest leading-tight">{c.t}</div>
-                  <div className="text-[11px] text-charcoal/60 mt-0.5">{c.s}</div>
+      <section id="about" className="relative py-24 md:py-36 overflow-hidden">
+        {/* Decorative giant 360° watermark */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-16 -right-10 select-none font-display text-[14rem] md:text-[22rem] leading-none text-forest/[0.04] tracking-tighter"
+        >
+          360°
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 grid gap-16 lg:gap-24 lg:grid-cols-12 items-center">
+          {/* Image collage */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative">
+              <img
+                src={terraceImg}
+                alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
+                className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-elegant)]"
+              />
+              {/* Floating stat card */}
+              <div className="absolute -bottom-6 -left-4 sm:-left-8 bg-cream rounded-2xl shadow-[var(--shadow-card)] border border-forest/10 px-5 py-4 flex items-center gap-4">
+                <div className="font-display text-4xl text-gold leading-none">07</div>
+                <div className="text-left">
+                  <div className="text-xs uppercase tracking-[0.2em] text-forest/60">Years on the</div>
+                  <div className="text-sm font-semibold text-forest">Sarandë seafront</div>
                 </div>
-              ))}
+              </div>
+              {/* Floating gold badge */}
+              <div className="hidden sm:flex absolute -top-5 -right-5 h-24 w-24 rounded-full bg-gold text-forest items-center justify-center text-center shadow-[var(--shadow-card)] rotate-[-8deg]">
+                <div>
+                  <div className="font-display text-xl leading-none">360°</div>
+                  <div className="text-[9px] uppercase tracking-[0.18em] mt-1">Sea View</div>
+                </div>
+              </div>
             </div>
-            <a href="#contact" className="btn-ghost-dark inline-flex gap-2">Our Full Story <ArrowRight size={16} /></a>
+          </div>
+
+          {/* Text column */}
+          <div className="lg:col-span-6 lg:pl-6">
+            <span className="eyebrow">More Than a Bar</span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-7 text-forest leading-[1.05]">
+              Born from passion.<br />
+              <em className="text-gold not-italic font-display italic">Built for the vibe.</em>
+            </h2>
+            <p className="text-charcoal/75 leading-relaxed mb-5 text-[17px]">
+              Vibe 360° was born on the Sarandë seafront with one goal — a place where the sunset, the music, and the cocktails all hit at exactly the right moment.
+            </p>
+            <p className="text-charcoal/70 leading-relaxed mb-10">
+              Two seaview verandas. A bar built around Albanian spirits. A kitchen that loves the Mediterranean. Come for golden hour — stay until the stars are out.
+            </p>
+
+            {/* Feature list */}
+            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
+              {[
+                { t: "Two Seaview Verandas", s: "Upper deck for sunsets, lower for late nights" },
+                { t: "Albanian Craft Cocktails", s: "Saffron raki, mulberry, mountain herbs" },
+                { t: "Mediterranean Kitchen", s: "Fresh catch, grills, garden plates" },
+                { t: "Premium Shisha", s: "Dark leaf, hand-prepared, slow burn" },
+              ].map((f) => (
+                <li key={f.t} className="flex gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                  <div>
+                    <div className="text-sm font-semibold text-forest">{f.t}</div>
+                    <div className="text-xs text-charcoal/60 mt-0.5">{f.s}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <a href="#contact" className="btn-ghost-dark inline-flex gap-2">
+              Our Full Story <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
