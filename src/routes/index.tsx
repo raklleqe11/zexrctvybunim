@@ -12,6 +12,8 @@ import cocktailPourImg from "@/assets/site/cocktail-pour.png";
 import espressoMartiniImg from "@/assets/site/espresso-martini.png";
 import spaceSpeakImg from "@/assets/site/space-speak.png";
 import spaceSpeak2Img from "@/assets/site/space-speak-2.webp";
+import spaceSpeak3Img from "@/assets/site/space-speak-3.png";
+import mojitoImg from "@/assets/site/mojito.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,7 +29,7 @@ export const Route = createFileRoute("/")({
 
 const cocktails = [
   { name: "Kadare", price: "800L", desc: "Saffron raki, honey syrup, lemon, fresh mint", badge: "Albanian Original" },
-  { name: "Mojito", price: "650L", desc: "White rum, lime, mint, sugar, soda", badge: "Most Popular" },
+  { name: "Mojito", price: "650L", desc: "White rum, lime, mint, sugar, soda", badge: "Most Popular", img: mojitoImg },
   { name: "Espresso Martini", price: "700L", desc: "Vodka, fresh espresso, coffee liqueur", badge: null, img: espressoMartiniImg },
 ];
 
@@ -314,6 +316,7 @@ function Home() {
           {[
             { type: "img" as const, src: spaceSpeakImg, alt: "The atmosphere at Vibe 360° in Sarandë" },
             { type: "img" as const, src: spaceSpeak2Img, alt: "Inside the Vibe 360° lounge" },
+            { type: "img" as const, src: spaceSpeak3Img, alt: "Vibe 360° interior detail" },
             { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
             { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
             { type: "ph" as const, label: "The Terrace at golden hour" },
