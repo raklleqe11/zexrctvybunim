@@ -338,14 +338,6 @@ function Home() {
           <div className="text-center mb-14 flex flex-col items-center">
             <span className="eyebrow">{"\n"}</span>
             <h2 className="font-display md:text-5xl mt-3 mb-5 text-center text-3xl">What our guests say</h2>
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5">
-              <div className="flex gap-0.5 text-gold">
-                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-              </div>
-              <span className="text-cream/85 text-xs sm:text-sm">
-                <span className="font-semibold text-gold">4.9</span> · 700+ Google reviews
-              </span>
-            </div>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {reviews.map((r) => (
@@ -364,17 +356,40 @@ function Home() {
           <div className="text-center mt-10">
             <a href="#" className="btn-outline">Leave a Google Review</a>
           </div>
+
+          {/* MAP */}
+          <div className="mt-20">
+            <div className="text-center mb-8">
+              <span className="eyebrow">Find Us</span>
+              <h3 className="font-display text-3xl md:text-4xl mt-3 text-cream">On the Sarandë seafront</h3>
+              <p className="text-cream/70 text-sm mt-2">Tap the map to open directions in Google Maps.</p>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Vibe+360+Cocktail+Food+Bar+Saranda"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative rounded-3xl overflow-hidden border border-gold/30 shadow-[var(--shadow-elegant)] group"
+            >
+              <iframe
+                title="Vibe 360° location on Google Maps"
+                src="https://www.google.com/maps?q=Vibe+360+Cocktail+Food+Bar+Saranda&output=embed"
+                className="w-full h-[420px] md:h-[500px] block grayscale-[15%] group-hover:grayscale-0 transition-all duration-500"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-gold/20 rounded-3xl" />
+              <div className="absolute bottom-5 left-5 bg-forest-deep/90 backdrop-blur-sm border border-gold/30 rounded-xl px-4 py-3 text-left">
+                <div className="font-display text-gold text-lg leading-tight">Vibe 360°</div>
+                <div className="text-cream/80 text-xs">Cocktail · Food · Bar — Sarandë</div>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* TRUST STRIP — repositioned as social proof band */}
       <section className="bg-cream border-y border-forest/10">
         <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-forest text-sm">
-          <div className="inline-flex items-center gap-2">
-            <Star size={15} fill="currentColor" className="text-gold" />
-            <span><span className="font-semibold">4.9</span> · 700+ Google reviews</span>
-          </div>
-          <span className="hidden sm:block h-4 w-px bg-forest/15" />
           <div className="inline-flex items-center gap-2">
             <Wine size={15} className="text-gold" /> <span>Signature Cocktails</span>
           </div>
