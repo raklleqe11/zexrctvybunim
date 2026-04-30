@@ -131,9 +131,17 @@ function Home() {
             <p className="text-charcoal/75 leading-relaxed mb-8">
               Two seaview verandas, a bar built around Albanian spirits, and a kitchen that loves the Mediterranean. Come for golden hour, stay until the stars are out.
             </p>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {["🌅 Two Seaview Verandas", "🥂 Albanian Cocktails", "🍕 Mediterranean Bites"].map((t) => (
-                <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-forest/8 text-forest border border-forest/15">{t}</span>
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {[
+                { icon: "🌅", t: "Seaview", s: "Two verandas" },
+                { icon: "🥂", t: "Cocktails", s: "Albanian craft" },
+                { icon: "🍕", t: "Kitchen", s: "Mediterranean" },
+              ].map((c) => (
+                <div key={c.t} className="rounded-xl border border-forest/15 bg-forest/[0.04] px-3 py-4 text-center">
+                  <div className="text-2xl mb-1.5">{c.icon}</div>
+                  <div className="text-sm font-semibold text-forest leading-tight">{c.t}</div>
+                  <div className="text-[11px] text-charcoal/60 mt-0.5">{c.s}</div>
+                </div>
               ))}
             </div>
             <a href="#contact" className="btn-ghost-dark inline-flex gap-2">Our Full Story <ArrowRight size={16} /></a>
