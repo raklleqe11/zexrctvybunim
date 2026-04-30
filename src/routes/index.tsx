@@ -323,19 +323,29 @@ function Home() {
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
-            "The Terrace at golden hour",
-            "Bar shelves with Albanian spirits",
-            "Sea view from upper veranda",
-            "The illuminated Vibe 360° sign",
-            "Cocktail being poured",
-            "Late night ambient lights",
-          ].map((t, i) => (
-            <PhotoPlaceholder
-              key={i}
-              label={t}
-              className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start"
-            />
-          ))}
+            { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
+            { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
+            { type: "ph" as const, label: "The Terrace at golden hour" },
+            { type: "ph" as const, label: "Bar shelves with Albanian spirits" },
+            { type: "ph" as const, label: "Sea view from upper veranda" },
+            { type: "ph" as const, label: "The illuminated Vibe 360° sign" },
+            { type: "ph" as const, label: "Late night ambient lights" },
+          ].map((item, i) =>
+            item.type === "img" ? (
+              <img
+                key={i}
+                src={item.src}
+                alt={item.alt}
+                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start rounded-xl object-cover shadow-[var(--shadow-card)]"
+              />
+            ) : (
+              <PhotoPlaceholder
+                key={i}
+                label={item.label}
+                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start"
+              />
+            )
+          )}
         </div>
       </section>
 
