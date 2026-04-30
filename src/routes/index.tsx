@@ -11,6 +11,7 @@ import goldenHourImg from "@/assets/site/golden-hour.png";
 import cocktailPourImg from "@/assets/site/cocktail-pour.png";
 import espressoMartiniImg from "@/assets/site/espresso-martini.png";
 import spaceSpeakImg from "@/assets/site/space-speak.png";
+import spaceSpeak2Img from "@/assets/site/space-speak-2.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -311,9 +312,10 @@ function Home() {
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
-            { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
             { type: "img" as const, src: spaceSpeakImg, alt: "The atmosphere at Vibe 360° in Sarandë" },
+            { type: "img" as const, src: spaceSpeak2Img, alt: "Inside the Vibe 360° lounge" },
             { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
+            { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
             { type: "ph" as const, label: "The Terrace at golden hour" },
             { type: "ph" as const, label: "Bar shelves with Albanian spirits" },
             { type: "ph" as const, label: "Sea view from upper veranda" },
