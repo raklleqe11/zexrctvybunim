@@ -166,10 +166,10 @@ function Home() {
               <em className="text-gold not-italic font-display italic">Built for the vibe.</em>
             </h2>
             <p className="text-charcoal/75 leading-relaxed mb-5 text-[17px]">
-              Vibe 360° was born on the Sarandë seafront with one goal — a place where the sunset, the music, and the cocktails all hit at exactly the right moment.
+              One of Sarandë's top rooftop bars — 360° sea views, handcrafted cocktails, tasty food and a relaxed vibe just steps from the promenade.
             </p>
             <p className="text-charcoal/70 leading-relaxed mb-10">
-              Two seaview verandas. A bar built around Albanian spirits. A kitchen that loves the Mediterranean. Come for golden hour — stay until the stars are out.
+              Now featuring premium shisha with curated flavors. Try our signature <em className="text-forest not-italic font-semibold">Kadare</em> with saffron raki, share shrimp ravioli, pinsa, truffle pasta or a seafood platter — and stay for the sunset. Come for the cocktails, stay for the view.
             </p>
 
             {/* Feature list */}
