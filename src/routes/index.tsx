@@ -93,8 +93,8 @@ function Home() {
       </section>
 
       {/* VIBE STRIP */}
-      <section className="bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-4 text-left">
+      <section className="bg-forest text-cream py-5">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-2 gap-y-3 gap-x-4 md:grid-cols-4 md:gap-12 text-center">
           {[
             { i: <Sun size={15} className="text-gold shrink-0" />, t: "Open Daily 8AM" },
             { i: <Wine size={15} className="text-gold shrink-0" />, t: "Happy Hour 2–6PM" },
@@ -310,9 +310,9 @@ function Home() {
 
       {/* GALLERY */}
       <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-10 text-left">
-          <span className="eyebrow text-left">The Atmosphere</span>
-          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-left">Let the space speak.</h2>
+        <div className="mx-auto max-w-7xl px-6 mb-10 text-center">
+          <span className="eyebrow">The Atmosphere</span>
+          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl">Let the space speak.</h2>
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
