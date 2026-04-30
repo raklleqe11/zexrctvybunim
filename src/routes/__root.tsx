@@ -29,10 +29,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vibe 360° — Cocktail Bar in Sarandë, Albania" },
+      { title: "eeeeeeeeeeee" },
       { name: "description", content: "Sunset views, signature cocktails and Mediterranean bites on the Ionian seafront." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "eeeeeeeeeeee" },
+      { name: "twitter:title", content: "eeeeeeeeeeee" },
+      { property: "og:description", content: "Sunset views, signature cocktails and Mediterranean bites on the Ionian seafront." },
+      { name: "twitter:description", content: "Sunset views, signature cocktails and Mediterranean bites on the Ionian seafront." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3f187b53-28a9-4a44-829a-8c47376f9094/id-preview-28f6e570--119d794e-d2d3-4e8d-abbd-3d358f3d53e4.lovable.app-1777558683920.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3f187b53-28a9-4a44-829a-8c47376f9094/id-preview-28f6e570--119d794e-d2d3-4e8d-abbd-3d358f3d53e4.lovable.app-1777558683920.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
