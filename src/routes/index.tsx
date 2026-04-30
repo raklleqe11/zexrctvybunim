@@ -222,10 +222,10 @@ function Home() {
                   ) : (
                     <PhotoPlaceholder label={`Cocktail photo: ${c.name} in coupe glass, garnish, soft backlight`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
                   )}
-                  <div className="p-6">
+                  <div className="p-6 text-center">
                     {c.badge && <span className="text-gold text-xl font-semibold">{c.badge}</span>}
-                    <div className="flex items-baseline justify-between mt-1">
-                      <h3 className="font-display text-forest mt-2 mb-3 group-hover:text-gold transition-colors text-xl">{c.name}</h3>
+                    <div className="flex flex-col items-center mt-1">
+                      <h3 className="font-display text-forest mt-2 mb-1 group-hover:text-gold transition-colors text-xl">{c.name}</h3>
                       <span className="text-forest font-sans font-semibold">{c.price}</span>
                     </div>
                     <p className="text-sm text-charcoal/65 mt-2">{c.desc}</p>
