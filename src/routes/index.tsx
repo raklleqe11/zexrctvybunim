@@ -7,6 +7,8 @@ import { Star, MapPin, Phone, ArrowRight, Sun, Wine, Waves, Cloud } from "lucide
 import heroImg from "@/assets/site/hero.png";
 import shishaImg from "@/assets/site/shisha.png";
 import terraceImg from "@/assets/site/terrace.png";
+import goldenHourImg from "@/assets/site/golden-hour.png";
+import cocktailPourImg from "@/assets/site/cocktail-pour.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -134,8 +136,8 @@ function Home() {
           <div className="lg:col-span-6 relative">
             <div className="relative">
               <img
-                src={terraceImg}
-                alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
+                src={goldenHourImg}
+                alt="Vibe 360° Sarandë rooftop bar at golden hour with 360° sea views"
                 className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-elegant)]"
               />
               {/* Floating stat card */}
@@ -164,10 +166,10 @@ function Home() {
               <em className="text-gold not-italic font-display italic">Built for the vibe.</em>
             </h2>
             <p className="text-charcoal/75 leading-relaxed mb-5 text-[17px]">
-              Vibe 360° was born on the Sarandë seafront with one goal — a place where the sunset, the music, and the cocktails all hit at exactly the right moment.
+              One of Sarandë's top rooftop bars — 360° sea views, handcrafted cocktails, tasty food and a relaxed vibe just steps from the promenade.
             </p>
             <p className="text-charcoal/70 leading-relaxed mb-10">
-              Two seaview verandas. A bar built around Albanian spirits. A kitchen that loves the Mediterranean. Come for golden hour — stay until the stars are out.
+              Now featuring premium shisha with curated flavors. Try our signature <em className="text-forest not-italic font-semibold">Kadare</em> with saffron raki, share shrimp ravioli, pinsa, truffle pasta or a seafood platter — and stay for the sunset. Come for the cocktails, stay for the view.
             </p>
 
             {/* Feature list */}
@@ -321,19 +323,29 @@ function Home() {
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
-            "The Terrace at golden hour",
-            "Bar shelves with Albanian spirits",
-            "Sea view from upper veranda",
-            "The illuminated Vibe 360° sign",
-            "Cocktail being poured",
-            "Late night ambient lights",
-          ].map((t, i) => (
-            <PhotoPlaceholder
-              key={i}
-              label={t}
-              className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start"
-            />
-          ))}
+            { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
+            { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
+            { type: "ph" as const, label: "The Terrace at golden hour" },
+            { type: "ph" as const, label: "Bar shelves with Albanian spirits" },
+            { type: "ph" as const, label: "Sea view from upper veranda" },
+            { type: "ph" as const, label: "The illuminated Vibe 360° sign" },
+            { type: "ph" as const, label: "Late night ambient lights" },
+          ].map((item, i) =>
+            item.type === "img" ? (
+              <img
+                key={i}
+                src={item.src}
+                alt={item.alt}
+                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start rounded-xl object-cover shadow-[var(--shadow-card)]"
+              />
+            ) : (
+              <PhotoPlaceholder
+                key={i}
+                label={item.label}
+                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start"
+              />
+            )
+          )}
         </div>
       </section>
 
