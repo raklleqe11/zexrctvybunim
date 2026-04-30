@@ -157,7 +157,7 @@ function Home() {
             <h2 className="font-display text-4xl md:text-5xl mt-3 text-forest">A taste of the menu</h2>
           </div>
 
-          <div className="flex justify-center gap-2 mb-12 overflow-x-auto pb-2">
+          <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2 mb-12 max-w-md sm:max-w-none mx-auto">
             {([
               ["cocktails", "🍹 Cocktails"],
               ["breakfast", "🍳 Breakfast"],
@@ -167,7 +167,7 @@ function Home() {
               <button
                 key={k}
                 onClick={() => setTab(k)}
-                className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   tab === k ? "bg-forest text-cream" : "bg-cream text-forest/70 hover:text-forest border border-forest/10"
                 }`}
               >
