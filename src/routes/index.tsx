@@ -294,12 +294,16 @@ function Home() {
       {/* TESTIMONIALS */}
       <section id="testimonials" className="bg-forest-deep text-cream py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14 flex flex-col items-center">
             <span className="eyebrow">Guest Stories</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-4">What our guests say</h2>
-            <div className="inline-flex items-center gap-2 text-gold">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-              <span className="text-cream/80 ml-2 text-sm">4.8 from 717 reviews on Google</span>
+            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5">What our guests say</h2>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5">
+              <div className="flex gap-0.5 text-gold">
+                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+              </div>
+              <span className="text-cream/85 text-xs sm:text-sm">
+                <span className="font-semibold text-gold">4.8</span> · 717 Google reviews
+              </span>
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
