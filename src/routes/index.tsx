@@ -68,16 +68,14 @@ function Home() {
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-cream">
-          <div className="inline-flex items-center gap-2 text-gold text-sm tracking-[0.2em] uppercase mb-6">
-            <MapPin size={14} /> Sarandë, Albania
+          <div className="inline-flex items-center gap-2 text-gold text-xs sm:text-sm tracking-[0.25em] uppercase mb-6">
+            <MapPin size={14} /> Seafront · Sarandë
           </div>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6">
-            Sunset Views.<br />
-            <span className="italic text-gold">Signature Cocktails.</span><br />
-            Unforgettable Vibes.
+          <h1 className="font-display font-light text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
+            Where the <em className="italic text-gold font-normal">sunset</em> meets your glass.
           </h1>
-          <p className="text-cream/80 text-base md:text-lg max-w-2xl mx-auto mb-10">
-            Best cocktail bar on the Albanian Riviera — right on the Ionian seafront.
+          <p className="text-cream/80 text-base md:text-lg max-w-xl mx-auto mb-10">
+            Cocktails, shisha and Mediterranean bites on the Ionian seafront — all day, every day.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact" className="btn-primary w-full sm:w-auto">Reserve a Table</a>
