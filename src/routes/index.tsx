@@ -4,6 +4,9 @@ import { Footer } from "@/components/site/Footer";
 import { PhotoPlaceholder } from "@/components/site/PhotoPlaceholder";
 import { useState } from "react";
 import { Star, MapPin, Phone, ArrowRight, Sun, Wine, Waves, Cloud } from "lucide-react";
+import heroImg from "@/assets/site/hero.png";
+import shishaImg from "@/assets/site/shisha.png";
+import terraceImg from "@/assets/site/terrace.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,10 +61,10 @@ function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <PhotoPlaceholder
-          variant="dark"
-          label="Hero photo: Vibe 360° outdoor terrace at golden hour, Ionian sea behind, warm string lights, low cocktail tables"
-          className="absolute inset-0 !rounded-none !border-0"
+        <img
+          src={heroImg}
+          alt="Vibe 360° terrace at golden hour overlooking the Ionian sea in Sarandë"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-cream">
@@ -114,9 +117,10 @@ function Home() {
       {/* ABOUT */}
       <section id="about" className="py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-2 md:items-center">
-          <PhotoPlaceholder
-            label="The Vibe 360° building at night — illuminated logo, warm windows, palm tree silhouettes"
-            className="aspect-[4/5] md:aspect-[4/5]"
+          <img
+            src={terraceImg}
+            alt="Guests sitting at outdoor tables at Vibe 360° in Sarandë"
+            className="aspect-[4/5] w-full rounded-2xl object-cover shadow-[var(--shadow-card)]"
           />
           <div>
             <span className="eyebrow">More Than a Bar</span>
@@ -214,7 +218,7 @@ function Home() {
 
           {tab === "shisha" && (
             <div className="rounded-3xl bg-forest-deep text-cream p-10 md:p-16 grid md:grid-cols-2 gap-10 items-center">
-              <PhotoPlaceholder variant="dark" label="Shisha photo: premium hookah on terrace at dusk, glowing coal, sea behind" className="aspect-[4/3]" />
+              <img src={shishaImg} alt="Premium shisha at Vibe 360°" className="aspect-[4/3] w-full rounded-2xl object-cover" />
               <div>
                 <span className="eyebrow">Sunset Sessions</span>
                 <h3 className="font-display text-4xl mt-3 mb-4">Premium dark leaf, hand-prepared.</h3>
