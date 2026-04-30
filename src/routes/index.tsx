@@ -414,21 +414,24 @@ function Home() {
       <section id="contact" className="py-24 bg-gradient-to-br from-forest to-forest-deep text-cream">
         <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-2 gap-12 items-center">
           <div>
+            <div className="rounded-2xl overflow-hidden shadow-[var(--shadow-card)] mb-8">
+              <img
+                src={goldenHourImg}
+                alt="Golden hour view from Vibe 360 terrace in Sarandë"
+                className="w-full h-72 md:h-96 object-cover"
+                loading="lazy"
+              />
+            </div>
             <span className="eyebrow">Reserve</span>
             <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5">
-              Reserve your table.<br /><em className="text-gold">Catch the best views in Sarandë.</em>
+              Reserve your <em className="text-gold">golden hour.</em>
             </h2>
-            <p className="text-cream/70 mb-8">
-              Walk-ins welcome — but for sunset hours and weekends, a reservation guarantees your view. Reach us in seconds.
+            <p className="text-cream/70 mb-3">
+              The sky turns gold, the sea glows — and the best seats go fast. Lock in your sunset table in seconds.
             </p>
-            <div className="space-y-3">
-              <a href="https://wa.me/355683993447" className="btn-primary w-full sm:w-auto">💬 Reserve on WhatsApp</a>
-              <div>
-                <a href="tel:+355683993447" className="inline-flex items-center gap-2 text-cream hover:text-gold">
-                  <Phone size={16} /> +355 68 399 3447
-                </a>
-              </div>
-            </div>
+            <p className="text-gold/90 text-sm font-semibold uppercase tracking-wider">
+              Happy Hour daily · 6–8 PM
+            </p>
           </div>
           <form
             onSubmit={(e) => { e.preventDefault(); window.open("https://wa.me/355683993447", "_blank"); }}
