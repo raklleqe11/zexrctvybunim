@@ -87,24 +87,6 @@ function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP — pulled out of hero for breathing room */}
-      <section className="bg-cream border-b border-forest/10">
-        <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-forest text-sm">
-          <div className="inline-flex items-center gap-2">
-            <Star size={15} fill="currentColor" className="text-gold" />
-            <span><span className="font-semibold">4.8</span> · 717 Google reviews</span>
-          </div>
-          <span className="hidden sm:block h-4 w-px bg-forest/15" />
-          <div className="inline-flex items-center gap-2">
-            <Wine size={15} className="text-gold" /> <span>Signature Cocktails</span>
-          </div>
-          <span className="hidden sm:block h-4 w-px bg-forest/15" />
-          <div className="inline-flex items-center gap-2">
-            <Waves size={15} className="text-gold" /> <span>Seaview Terrace</span>
-          </div>
-        </div>
-      </section>
-
       {/* VIBE STRIP */}
       <section className="bg-forest text-cream">
         <div className="mx-auto max-w-7xl px-4 py-4 grid grid-cols-2 gap-x-4 gap-y-3 md:flex md:justify-around md:py-5 text-xs sm:text-sm">
@@ -380,6 +362,24 @@ function Home() {
           </div>
           <div className="text-center mt-10">
             <a href="#" className="btn-outline">Leave a Google Review</a>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST STRIP — repositioned as social proof band */}
+      <section className="bg-cream border-y border-forest/10">
+        <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-forest text-sm">
+          <div className="inline-flex items-center gap-2">
+            <Star size={15} fill="currentColor" className="text-gold" />
+            <span><span className="font-semibold">4.8</span> · 717 Google reviews</span>
+          </div>
+          <span className="hidden sm:block h-4 w-px bg-forest/15" />
+          <div className="inline-flex items-center gap-2">
+            <Wine size={15} className="text-gold" /> <span>Signature Cocktails</span>
+          </div>
+          <span className="hidden sm:block h-4 w-px bg-forest/15" />
+          <div className="inline-flex items-center gap-2">
+            <Waves size={15} className="text-gold" /> <span>Seaview Terrace</span>
           </div>
         </div>
       </section>
