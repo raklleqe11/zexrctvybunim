@@ -64,34 +64,41 @@ function Home() {
         <img
           src={heroImg}
           alt="Vibe 360° terrace at golden hour overlooking the Ionian sea in Sarandë"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover scale-105 blur-[2px]"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 bg-forest-deep/25" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-cream">
           <div className="inline-flex items-center gap-2 text-gold text-xs sm:text-sm tracking-[0.25em] uppercase mb-6">
             <MapPin size={14} /> Seafront · Sarandë
           </div>
           <h1 className="font-display font-light text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
-            Where the <em className="italic text-gold font-normal">sunset</em> meets your glass.
+            A <em className="italic text-gold font-normal">360°</em> view<br />of the good life.
           </h1>
-          <p className="text-cream text-base md:text-lg max-w-xl mx-auto mt-6 mb-12 leading-relaxed font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-            Crafted cocktails, slow shisha &amp; Mediterranean bites — served with a front-row seat to the Ionian.
+          <p className="text-cream/95 text-base md:text-lg max-w-xl mx-auto mt-6 mb-12 leading-relaxed font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
+            Sea on every side. Cocktails in every hand. Sarandë's all-day rooftop on the Ionian.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact" className="btn-primary w-full sm:w-auto">Reserve a Table</a>
             <a href="/menu" className="btn-outline w-full sm:w-auto">View Menu</a>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 flex flex-wrap items-center justify-center gap-3">
-            {[
-              { icon: <Star size={14} fill="currentColor" />, t: "4.8 Rating" },
-              { icon: <Wine size={14} />, t: "Signature Cocktails" },
-              { icon: <Waves size={14} />, t: "Seaview Terrace" },
-            ].map((p, i) => (
-              <span key={i} className="inline-flex items-center gap-2 text-gold text-xs tracking-wider px-4 py-2 rounded-full border border-gold/30 bg-forest-deep/40 backdrop-blur-sm">
-                {p.icon}{p.t}
-              </span>
-            ))}
+      {/* TRUST STRIP — pulled out of hero for breathing room */}
+      <section className="bg-cream border-b border-forest/10">
+        <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-forest text-sm">
+          <div className="inline-flex items-center gap-2">
+            <Star size={15} fill="currentColor" className="text-gold" />
+            <span><span className="font-semibold">4.8</span> · 717 Google reviews</span>
+          </div>
+          <span className="hidden sm:block h-4 w-px bg-forest/15" />
+          <div className="inline-flex items-center gap-2">
+            <Wine size={15} className="text-gold" /> <span>Signature Cocktails</span>
+          </div>
+          <span className="hidden sm:block h-4 w-px bg-forest/15" />
+          <div className="inline-flex items-center gap-2">
+            <Waves size={15} className="text-gold" /> <span>Seaview Terrace</span>
           </div>
         </div>
       </section>
