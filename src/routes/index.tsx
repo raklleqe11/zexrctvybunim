@@ -319,27 +319,14 @@ function Home() {
             { type: "img" as const, src: spaceSpeak3Img, alt: "Vibe 360° interior detail" },
             { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
             { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
-            { type: "ph" as const, label: "The Terrace at golden hour" },
-            { type: "ph" as const, label: "Bar shelves with Albanian spirits" },
-            { type: "ph" as const, label: "Sea view from upper veranda" },
-            { type: "ph" as const, label: "The illuminated Vibe 360° sign" },
-            { type: "ph" as const, label: "Late night ambient lights" },
-          ].map((item, i) =>
-            item.type === "img" ? (
-              <img
-                key={i}
-                src={item.src}
-                alt={item.alt}
-                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start rounded-xl object-cover shadow-[var(--shadow-card)]"
-              />
-            ) : (
-              <PhotoPlaceholder
-                key={i}
-                label={item.label}
-                className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start"
-              />
-            )
-          )}
+          ].map((item, i) => (
+            <img
+              key={i}
+              src={item.src}
+              alt={item.alt}
+              className="aspect-[3/4] w-[260px] md:w-[320px] shrink-0 snap-start rounded-xl object-cover shadow-[var(--shadow-card)]"
+            />
+          ))}
         </div>
       </section>
 
