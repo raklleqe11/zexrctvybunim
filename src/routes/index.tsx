@@ -343,7 +343,7 @@ function Home() {
                 {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
               </div>
               <span className="text-cream/85 text-xs sm:text-sm">
-                <span className="font-semibold text-gold">4.8</span> · 717 Google reviews
+                <span className="font-semibold text-gold">4.9</span> · 700+ Google reviews
               </span>
             </div>
           </div>
@@ -372,7 +372,7 @@ function Home() {
         <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-forest text-sm">
           <div className="inline-flex items-center gap-2">
             <Star size={15} fill="currentColor" className="text-gold" />
-            <span><span className="font-semibold">4.8</span> · 717 Google reviews</span>
+            <span><span className="font-semibold">4.9</span> · 700+ Google reviews</span>
           </div>
           <span className="hidden sm:block h-4 w-px bg-forest/15" />
           <div className="inline-flex items-center gap-2">
