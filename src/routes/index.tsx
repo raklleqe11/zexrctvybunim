@@ -89,7 +89,7 @@ function Home() {
 
       {/* VIBE STRIP */}
       <section className="bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-4 py-4 grid grid-cols-2 gap-x-4 gap-y-3 md:flex md:justify-around md:py-5 text-xs sm:text-sm">
+        <div className="mx-auto max-w-7xl px-6 grid gap-12 md:grid-cols-4 text-left">
           {[
             { i: <Sun size={15} className="text-gold shrink-0" />, t: "Open Daily 8AM" },
             { i: <Wine size={15} className="text-gold shrink-0" />, t: "Happy Hour 2–6PM" },
@@ -141,9 +141,9 @@ function Home() {
           </div>
 
           {/* Text column */}
-          <div className="lg:col-span-6 lg:pl-6 text-left">
-            <span className="eyebrow text-right">More Than a Bar</span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 mb-7 text-forest leading-[1.05]">
+          <div className="lg:col-span-6 lg:pl-6">
+            <span className="eyebrow">More Than a Bar</span>
+            <h2 className="font-display md:text-5xl mt-3 mb-5 text-left text-2xl text-forest leading-[1.05]">
               Born from passion.<br />
               <em className="text-gold not-italic font-display italic">Built for the vibe.</em>
             </h2>
@@ -299,9 +299,9 @@ function Home() {
 
       {/* GALLERY */}
       <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 mb-10 text-center">
-          <span className="eyebrow">The Atmosphere</span>
-          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-center">Let the space speak.</h2>
+        <div className="mx-auto max-w-7xl px-6 mb-10 text-left">
+          <span className="eyebrow text-left">The Atmosphere</span>
+          <h2 className="font-display md:text-5xl mt-3 text-forest text-3xl text-left">Let the space speak.</h2>
         </div>
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
@@ -422,14 +422,14 @@ function Home() {
                 loading="lazy"
               />
             </div>
-            <span className="eyebrow">Reserve</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5">
+            <span className="eyebrow text-left">Reserve</span>
+            <h2 className="font-display md:text-5xl mt-3 mb-5 text-left text-2xl">
               Reserve your <em className="text-gold">golden hour.</em>
             </h2>
             <p className="text-cream/70 mb-3">
               The sky turns gold, the sea glows — and the best seats go fast. Lock in your sunset table in seconds.
             </p>
-            <p className="text-gold/90 text-sm font-semibold uppercase tracking-wider">
+            <p className="text-gold/90 text-sm font-semibold uppercase tracking-wider text-center">
               Happy Hour daily · 6–8 PM
             </p>
           </div>
