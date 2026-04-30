@@ -351,7 +351,7 @@ function Home() {
                 <div className="flex gap-1 text-gold mb-4">
                   {Array.from({ length: r.rating }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
                 </div>
-                <p className="text-cream/85 leading-relaxed mb-5">"{r.quote}"</p>
+                <p className="text-cream/85 leading-relaxed mb-5 text-left">"{r.quote}"</p>
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-display text-lg">{r.name}</span>
                   <span className="text-gold/70 text-xs uppercase tracking-wider">Google</span>
