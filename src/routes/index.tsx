@@ -74,8 +74,8 @@ function Home() {
           <h1 className="font-display font-light text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
             Where the <em className="italic text-gold font-normal">sunset</em> meets your glass.
           </h1>
-          <p className="text-cream/80 text-base md:text-lg max-w-xl mx-auto mb-10">
-            Cocktails, shisha and Mediterranean bites on the Ionian seafront — all day, every day.
+          <p className="font-serif text-cream/85 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed italic tracking-wide">
+            Crafted cocktails, slow shisha &amp; Mediterranean bites —<br className="hidden sm:block" /> served with a front-row seat to the Ionian.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact" className="btn-primary w-full sm:w-auto">Reserve a Table</a>
