@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Youtube, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Youtube, MapPin, Phone, MessageCircle } from "lucide-react";
 import logo from "@/assets/site/logo.png";
 
 export function Footer() {
