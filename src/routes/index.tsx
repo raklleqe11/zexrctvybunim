@@ -7,6 +7,8 @@ import { Star, MapPin, Phone, ArrowRight, Sun, Wine, Waves, Cloud } from "lucide
 import heroImg from "@/assets/site/hero.png";
 import shishaImg from "@/assets/site/shisha.png";
 import terraceImg from "@/assets/site/terrace.png";
+import goldenHourImg from "@/assets/site/golden-hour.png";
+import cocktailPourImg from "@/assets/site/cocktail-pour.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
