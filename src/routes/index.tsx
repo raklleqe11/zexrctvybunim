@@ -228,7 +228,7 @@ function Home() {
                       <h3 className="font-display text-forest group-hover:text-gold transition-colors text-xl">{c.name}</h3>
                       <span className="text-forest font-sans font-semibold whitespace-nowrap">{c.price}</span>
                     </div>
-                    <p className="text-sm text-charcoal/65 mt-1">{c.desc}</p>
+                    <p className="text-charcoal/65 mt-1 text-sm text-left">{c.desc}</p>
                   </div>
                 </article>
               ))}
