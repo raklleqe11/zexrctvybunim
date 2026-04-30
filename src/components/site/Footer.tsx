@@ -47,8 +47,13 @@ export function Footer() {
             <li className="flex gap-2"><Phone size={16} className="text-gold mt-0.5 shrink-0" /> <a href="tel:+355683993447" className="hover:text-gold">+355 68 399 3447</a></li>
           </ul>
           <div className="flex gap-3 mt-5">
-            {[Instagram, Facebook, Youtube].map((Icon, i) => (
-              <a key={i} href="#" className="h-9 w-9 grid place-items-center rounded-full border border-cream/15 hover:border-gold hover:text-gold transition-colors">
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/vibe360.al/", label: "Instagram" },
+              { Icon: Facebook, href: "https://www.facebook.com/people/Vibe-360%C2%BA-Cocktail-Food-Bar-Saranda/61573891322385/", label: "Facebook" },
+              { Icon: Youtube, href: "https://www.youtube.com/channel/UCaLyQzb_CCiWE1qwTJ_BtWw", label: "YouTube" },
+              { Icon: MessageCircle, href: "https://www.tripadvisor.com/Restaurant_Review-g303165-d33008172-Reviews-Vibe_360_Cocktail_Food_Bar_Saranda-Saranda_Vlore_County.html", label: "Tripadvisor" },
+            ].map(({ Icon, href, label }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="h-9 w-9 grid place-items-center rounded-full border border-cream/15 hover:border-gold hover:text-gold transition-colors">
                 <Icon size={15} />
               </a>
             ))}
