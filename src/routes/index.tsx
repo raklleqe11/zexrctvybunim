@@ -68,16 +68,14 @@ function Home() {
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center text-cream">
-          <div className="inline-flex items-center gap-2 text-gold text-sm tracking-[0.2em] uppercase mb-6">
-            <MapPin size={14} /> Sarandë, Albania
+          <div className="inline-flex items-center gap-2 text-gold text-xs sm:text-sm tracking-[0.25em] uppercase mb-6">
+            <MapPin size={14} /> Seafront · Sarandë
           </div>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-6">
-            Sunset Views.<br />
-            <span className="italic text-gold">Signature Cocktails.</span><br />
-            Unforgettable Vibes.
+          <h1 className="font-display font-light text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
+            Where the <em className="italic text-gold font-normal">sunset</em> meets your glass.
           </h1>
-          <p className="text-cream/80 text-base md:text-lg max-w-2xl mx-auto mb-10">
-            Best cocktail bar on the Albanian Riviera — right on the Ionian seafront.
+          <p className="text-cream/80 text-base md:text-lg max-w-xl mx-auto mb-10">
+            Cocktails, shisha and Mediterranean bites on the Ionian seafront — all day, every day.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#contact" className="btn-primary w-full sm:w-auto">Reserve a Table</a>
@@ -100,15 +98,15 @@ function Home() {
 
       {/* VIBE STRIP */}
       <section className="bg-forest text-cream">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex gap-8 overflow-x-auto md:justify-around md:overflow-visible text-sm">
+        <div className="mx-auto max-w-7xl px-4 py-4 grid grid-cols-2 gap-x-4 gap-y-3 md:flex md:justify-around md:py-5 text-xs sm:text-sm">
           {[
-            { i: <Sun size={16} className="text-gold" />, t: "Open Daily 8AM" },
-            { i: <Wine size={16} className="text-gold" />, t: "Happy Hour 2–6PM" },
-            { i: <Waves size={16} className="text-gold" />, t: "Ionian Seaview" },
-            { i: <Cloud size={16} className="text-gold" />, t: "Premium Shisha" },
+            { i: <Sun size={15} className="text-gold shrink-0" />, t: "Open Daily 8AM" },
+            { i: <Wine size={15} className="text-gold shrink-0" />, t: "Happy Hour 2–6PM" },
+            { i: <Waves size={15} className="text-gold shrink-0" />, t: "Ionian Seaview" },
+            { i: <Cloud size={15} className="text-gold shrink-0" />, t: "Premium Shisha" },
           ].map((x, i) => (
-            <div key={i} className="flex items-center gap-2 whitespace-nowrap shrink-0">
-              {x.i}<span>{x.t}</span>
+            <div key={i} className="flex items-center justify-center gap-2">
+              {x.i}<span className="truncate">{x.t}</span>
             </div>
           ))}
         </div>
@@ -133,9 +131,17 @@ function Home() {
             <p className="text-charcoal/75 leading-relaxed mb-8">
               Two seaview verandas, a bar built around Albanian spirits, and a kitchen that loves the Mediterranean. Come for golden hour, stay until the stars are out.
             </p>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {["🌅 Two Seaview Verandas", "🥂 Albanian Cocktails", "🍕 Mediterranean Bites"].map((t) => (
-                <span key={t} className="text-xs px-3 py-1.5 rounded-full bg-forest/8 text-forest border border-forest/15">{t}</span>
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {[
+                { icon: "🌅", t: "Seaview", s: "Two verandas" },
+                { icon: "🥂", t: "Cocktails", s: "Albanian craft" },
+                { icon: "🍕", t: "Kitchen", s: "Mediterranean" },
+              ].map((c) => (
+                <div key={c.t} className="rounded-xl border border-forest/15 bg-forest/[0.04] px-3 py-4 text-center">
+                  <div className="text-2xl mb-1.5">{c.icon}</div>
+                  <div className="text-sm font-semibold text-forest leading-tight">{c.t}</div>
+                  <div className="text-[11px] text-charcoal/60 mt-0.5">{c.s}</div>
+                </div>
               ))}
             </div>
             <a href="#contact" className="btn-ghost-dark inline-flex gap-2">Our Full Story <ArrowRight size={16} /></a>
@@ -151,7 +157,7 @@ function Home() {
             <h2 className="font-display text-4xl md:text-5xl mt-3 text-forest">A taste of the menu</h2>
           </div>
 
-          <div className="flex justify-center gap-2 mb-12 overflow-x-auto pb-2">
+          <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2 mb-12 max-w-md sm:max-w-none mx-auto">
             {([
               ["cocktails", "🍹 Cocktails"],
               ["breakfast", "🍳 Breakfast"],
@@ -161,7 +167,7 @@ function Home() {
               <button
                 key={k}
                 onClick={() => setTab(k)}
-                className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   tab === k ? "bg-forest text-cream" : "bg-cream text-forest/70 hover:text-forest border border-forest/10"
                 }`}
               >
@@ -240,8 +246,8 @@ function Home() {
       <section className="bg-forest text-cream py-20">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <span className="eyebrow">Every Day</span>
-          <h2 className="font-display text-4xl md:text-6xl mt-3 mb-6">
-            Happy Hour <span className="text-gold italic">2PM — 6PM</span>
+          <h2 className="font-display whitespace-nowrap text-[2rem] sm:text-5xl md:text-6xl mt-3 mb-6">
+            Happy Hour <span className="text-gold italic">2–6PM</span>
           </h2>
           <div className="grid sm:grid-cols-3 gap-6 my-10 text-sm">
             <div className="border border-cream/15 rounded-xl p-5">
@@ -288,12 +294,16 @@ function Home() {
       {/* TESTIMONIALS */}
       <section id="testimonials" className="bg-forest-deep text-cream py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14 flex flex-col items-center">
             <span className="eyebrow">Guest Stories</span>
-            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-4">What our guests say</h2>
-            <div className="inline-flex items-center gap-2 text-gold">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-              <span className="text-cream/80 ml-2 text-sm">4.8 from 717 reviews on Google</span>
+            <h2 className="font-display text-4xl md:text-5xl mt-3 mb-5">What our guests say</h2>
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/30 bg-gold/5">
+              <div className="flex gap-0.5 text-gold">
+                {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+              </div>
+              <span className="text-cream/85 text-xs sm:text-sm">
+                <span className="font-semibold text-gold">4.8</span> · 717 Google reviews
+              </span>
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
