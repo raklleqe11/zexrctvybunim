@@ -9,6 +9,8 @@ import shishaImg from "@/assets/site/shisha.png";
 import terraceImg from "@/assets/site/terrace.png";
 import goldenHourImg from "@/assets/site/golden-hour.png";
 import cocktailPourImg from "@/assets/site/cocktail-pour.png";
+import espressoMartiniImg from "@/assets/site/espresso-martini.png";
+import spaceSpeakImg from "@/assets/site/space-speak.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,7 +27,7 @@ export const Route = createFileRoute("/")({
 const cocktails = [
   { name: "Kadare", price: "800L", desc: "Saffron raki, honey syrup, lemon, fresh mint", badge: "Albanian Original" },
   { name: "Mojito", price: "650L", desc: "White rum, lime, mint, sugar, soda", badge: "Most Popular" },
-  { name: "Espresso Martini", price: "700L", desc: "Vodka, fresh espresso, coffee liqueur", badge: null },
+  { name: "Espresso Martini", price: "700L", desc: "Vodka, fresh espresso, coffee liqueur", badge: null, img: espressoMartiniImg },
 ];
 
 const breakfast = [
@@ -210,7 +212,11 @@ function Home() {
             <div className="grid gap-6 md:grid-cols-3">
               {cocktails.map((c) => (
                 <article key={c.name} className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:-translate-y-1 transition-transform">
-                  <PhotoPlaceholder label={`Cocktail photo: ${c.name} in coupe glass, garnish, soft backlight`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
+                  {c.img ? (
+                    <img src={c.img} alt={`${c.name} cocktail at Vibe 360°`} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                  ) : (
+                    <PhotoPlaceholder label={`Cocktail photo: ${c.name} in coupe glass, garnish, soft backlight`} className="aspect-[4/3] !rounded-none !border-x-0 !border-t-0" />
+                  )}
                   <div className="p-6">
                     {c.badge && <span className="text-gold text-xl font-semibold">{c.badge}</span>}
                     <div className="flex items-baseline justify-between mt-1">
@@ -306,6 +312,7 @@ function Home() {
         <div className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x">
           {[
             { type: "img" as const, src: cocktailPourImg, alt: "Bartender pouring a signature cocktail at Vibe 360°" },
+            { type: "img" as const, src: spaceSpeakImg, alt: "The atmosphere at Vibe 360° in Sarandë" },
             { type: "img" as const, src: terraceImg, alt: "Guests on the seaview terrace at Vibe 360°" },
             { type: "ph" as const, label: "The Terrace at golden hour" },
             { type: "ph" as const, label: "Bar shelves with Albanian spirits" },
