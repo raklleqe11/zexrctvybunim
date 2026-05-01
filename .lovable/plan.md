@@ -1,53 +1,108 @@
-## What's happening
+## Important correction before we change anything
 
-Your Cloudflare Pages build is running `bun install --frozen-lockfile` (Bun's default in CI when a `bun.lockb` is present). That mode refuses to install if `package.json` and `bun.lockb` are even slightly out of sync — which is what the "lockfile had changes, but lockfile is frozen" error means.
+Your task says "deploy on Cloudflare Pages (NOT Workers)". I need to flag that this is the wrong target for your project, and explain why — so you can decide.
 
-Your repo currently has BOTH lockfiles committed:
-- `bun.lockb` (Bun)
-- `package-lock.json` (npm)
+**Your project is a TanStack Start app using `@cloudflare/vite-plugin` and `@tanstack/react-start/server-entry`.** That stack builds a **Cloudflare Worker** (server-side rendered, with server functions). It is NOT a static site. The `wrangler.jsonc` in your repo is a Worker config (`main: "@tanstack/react-start/server-entry"`).
 
-Having two lockfiles is the root cause of the drift — they get updated by different tools at different times and inevitably disagree with `package.json`.
+What this means in practice:
 
-## Recommendation: standardize on Bun
+- **Cloudflare Pages** is designed for static sites + optional Pages Functions. If you point Pages at this repo and tell it to serve the `dist/` folder as static assets, your homepage might load, but **all SSR, server functions, and API routes will 404**. Half your app will be broken.
+- **Cloudflare Workers** (with the new "Workers Builds" / Git integration, or `wrangler deploy`) is the correct target. It runs the SSR entry, serves static assets, and handles your server functions correctly. This is what your `wrangler.jsonc` is already set up for.
 
-Lovable's environment uses Bun (see `bunfig.toml`), so the cleanest fix is to keep Bun and drop npm's lockfile.
+You have two real choices:
 
-### Changes I'll make
+**Option A (recommended): Deploy to Cloudflare Workers, not Pages.**
+In the Cloudflare dashboard: Workers & Pages → Create → Workers → Connect to Git → pick your repo. Cloudflare reads `wrangler.jsonc` and deploys. No build command tweaking required beyond what's below.
 
-1. **Regenerate `bun.lockb`** by running `bun install` against the current `package.json`, so the lockfile matches dependencies exactly.
-2. **Delete `package-lock.json`** so only one lockfile exists in the repo.
-3. **Add a short note** (no config change needed) — Bun already reads `bunfig.toml`.
+**Option B: Stay on Pages.** This only works if you accept losing SSR/server functions and treating the app as static. Not recommended for this codebase, and the `wrangler.jsonc` becomes irrelevant (Pages ignores it).
 
-These changes will be auto-pushed to your connected GitHub repo by Lovable's two-way sync, so Cloudflare Pages will pick them up on the next build.
+The plan below sets you up for Option A and also works fine if you insist on Option B (Pages will just build the same `dist/` and serve it).
 
-### Cloudflare Pages build settings to use
+---
 
-In your Cloudflare Pages project → Settings → Builds & deployments:
+## Files I'll change
 
-- **Build command:** `bun run build`
-- **Install command (if shown separately):** `bun install` (NOT `bun install --frozen-lockfile`)
-- **Build output directory:** `dist` (TanStack Start with Cloudflare adapter — verify after first successful build; it may be `.output/public` depending on adapter version)
-- **Environment variable:** add `NODE_VERSION = 20` (Bun still needs Node available for some toolchain bits)
+### 1. `wrangler.jsonc` — remove trailing comma
 
-### Should you use `bun install` or `npm install`?
+Replace with the exact content you specified:
 
-**Use `bun install`.** Reasons:
-- `bunfig.toml` is already in the repo and configured for Bun.
-- Lovable generates/updates `bun.lockb`, so npm in CI would constantly fight it.
-- Bun is significantly faster on Cloudflare's build runners.
+```jsonc
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tanstack-start-app",
+  "compatibility_date": "2025-09-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "@tanstack/react-start/server-entry"
+}
+```
 
-If for any reason you'd rather use npm on Cloudflare, tell me and I'll do the inverse: delete `bun.lockb` + `bunfig.toml`, keep `package-lock.json`, and you'd set the build command to `npm ci && npm run build`. But I don't recommend it.
+(The previous version had a trailing comma after `"main"`. JSONC tolerates it, but removing it makes the file valid strict JSON too.)
 
-## Technical details
+### 2. `package.json` — leave as-is
 
-- `bun install` (without `--frozen-lockfile`) updates the lockfile to match `package.json`, then installs. This is what we need to run once to resync.
-- Cloudflare Pages auto-detects Bun when `bun.lockb` is present and switches to frozen mode. The fix is making sure the committed lockfile is in sync — not changing CI flags.
-- After this, every time Lovable adds/removes a dependency it will regenerate `bun.lockb`, the change pushes to GitHub, and Cloudflare's next build will succeed.
+Your task says to verify the build script is `"tanstack-start build"`. **Do not change it.** That command does not exist in this stack — TanStack Start v1 builds via Vite. The current script is correct:
 
-## After approval I will
+```json
+"scripts": {
+  "dev": "vite dev",
+  "build": "vite build",
+  ...
+}
+```
 
-1. Run `bun install` to regenerate `bun.lockb`.
-2. Delete `package-lock.json`.
-3. Confirm both lockfile state and that no other config needs touching.
+`vite build` invokes the `@cloudflare/vite-plugin` and `tanstackStart` plugin (both injected by `@lovable.dev/vite-tanstack-config`) and produces the Worker bundle. Changing this to `tanstack-start build` will break the build.
 
-You then trigger a new Cloudflare Pages deploy (or just push — it'll auto-build).
+### 3. Lockfiles — already clean, just resync
+
+- `package-lock.json` is already deleted (from the previous turn). Good.
+- `bun.lockb` exists but may be slightly out of sync with `package.json`, which is what's causing the `frozen-lockfile` error in CI.
+
+I'll run `bun install` once to regenerate `bun.lockb` so it matches `package.json` exactly. Lovable's GitHub sync pushes the updated lockfile automatically.
+
+### 4. No other files need to change
+
+`bunfig.toml`, `vite.config.ts`, and the route files are all fine.
+
+---
+
+## Build output directory
+
+After `vite build` with the Cloudflare plugin, the output is:
+
+- **`dist/`** — contains both the static client assets (under `dist/client/` or `dist/_build/`) and the Worker entry. This is what both Workers Builds and Pages will deploy.
+
+You don't need to manually configure the output folder for Workers — `wrangler` reads `wrangler.jsonc` and figures it out. For Pages, set "Build output directory" to `dist`.
+
+---
+
+## Cloudflare dashboard settings
+
+**For Cloudflare Workers (recommended):**
+- Build command: `bun install && bun run build`
+- Deploy command: leave default (Cloudflare auto-detects from `wrangler.jsonc`)
+- Root directory: `/`
+- Environment variable: `NODE_VERSION = 20`
+
+**For Cloudflare Pages (only if you go with Option B, accepting no SSR):**
+- Framework preset: None
+- Build command: `bun install && bun run build`
+- Build output directory: `dist`
+- Environment variable: `NODE_VERSION = 20`
+- Note: the `frozen-lockfile` error happens because Cloudflare's default install command is `bun install --frozen-lockfile`. Override it to `bun install` (without the flag) in the Pages build settings, OR rely on the resynced lockfile we're about to push (which should make frozen mode succeed too).
+
+---
+
+## Steps I'll execute on approval
+
+1. Overwrite `wrangler.jsonc` with the trailing-comma-free version above.
+2. Run `bun install` to resync `bun.lockb` with `package.json`.
+3. Confirm `dist/` is the build output and report back.
+4. Leave `package.json` untouched (the existing `vite build` script is correct — `tanstack-start build` is not a real command for this setup).
+
+After that, push (auto-syncs to GitHub) and trigger a new Cloudflare build.
+
+---
+
+## One thing I need from you
+
+**Confirm the deploy target before I proceed:** Workers (recommended, full app works) or Pages (static-only, SSR/server functions will not work)? If you're unsure, pick Workers — your `wrangler.jsonc` is already set up for it and it's the correct fit for TanStack Start.
