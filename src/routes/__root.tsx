@@ -37,8 +37,8 @@ export const Route = createRootRoute({
       { name: "twitter:title", content: "eeeeeeeeeeee" },
       { property: "og:description", content: "dfgh" },
       { name: "twitter:description", content: "dfgh" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3f187b53-28a9-4a44-829a-8c47376f9094/id-preview-28f6e570--119d794e-d2d3-4e8d-abbd-3d358f3d53e4.lovable.app-1777558683920.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3f187b53-28a9-4a44-829a-8c47376f9094/id-preview-28f6e570--119d794e-d2d3-4e8d-abbd-3d358f3d53e4.lovable.app-1777558683920.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2a080143-8bb0-4f96-a569-b82a2948be6b/id-preview-ae0de60d--037e6b22-3571-4d6d-95e5-4f0b8dea8398.lovable.app-1777574203907.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2a080143-8bb0-4f96-a569-b82a2948be6b/id-preview-ae0de60d--037e6b22-3571-4d6d-95e5-4f0b8dea8398.lovable.app-1777574203907.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
